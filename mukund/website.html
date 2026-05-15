@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Website</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+    }
+
+    /* Navbar */
+    nav{
+      background:#ff4d4d;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:white;
+    }
+
+    nav h1{
+      font-size:28px;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:20px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#d9f3ff;
+    }
+
+    /* Sections */
+    section{
+      padding:50px 30px;
+      min-height:100vh;
+    }
+
+    /* Home Section */
+    #home{
+      background:linear-gradient(to right,#ff4d4d,#b3e5fc);
+      color:white;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+
+    #home h2{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    #home p{
+      font-size:20px;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      padding:12px 25px;
+      border:none;
+      border-radius:8px;
+      background:white;
+      color:#ff4d4d;
+      font-size:16px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#ffe5e5;
+    }
+
+    /* Products */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-top:40px;
+    }
+
+    .card{
+      background:white;
+      border-radius:12px;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:10px;
+    }
+
+    .card h3{
+      margin:15px 0 10px;
+    }
+
+    .price{
+      color:#ff4d4d;
+      font-size:20px;
+      font-weight:bold;
+      margin-bottom:10px;
+    }
+
+    /* Login Section */
+    #login{
+      background:#e3f2fd;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .login-box{
+      background:white;
+      padding:30px;
+      width:100%;
+      max-width:400px;
+      border-radius:15px;
+      box-shadow:0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .login-box h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:#ff4d4d;
+    }
+
+    .form-group{
+      margin-bottom:15px;
+    }
+
+    .form-group label{
+      display:block;
+      margin-bottom:5px;
+      font-weight:bold;
+    }
+
+    .form-group input{
+      width:100%;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:8px;
+    }
+
+    .error{
+      color:red;
+      font-size:13px;
+      margin-top:5px;
+    }
+
+    /* About Section */
+    #about{
+      background:white;
+      text-align:center;
+    }
+
+    #about h2{
+      color:#ff4d4d;
+      margin-bottom:20px;
+      font-size:35px;
+    }
+
+    #about p{
+      max-width:800px;
+      margin:auto;
+      line-height:1.8;
+      font-size:18px;
+      color:#444;
+    }
+
+    footer{
+      background:#ff4d4d;
+      color:white;
+      text-align:center;
+      padding:15px;
+    }
+
+    @media(max-width:768px){
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      #home h2{
+        font-size:32px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>ShopEasy</h1>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+
+    <h2>Welcome to ShopEasy</h2>
+    <p>Your One-Stop Shopping Destination</p>
+
+    <button class="btn" onclick="shopNow()">Shop Now</button>
+
+    <div class="products">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoes">
+        <h3>Running Shoes</h3>
+        <div class="price">₹1999</div>
+        <button class="btn" onclick="buyNow()">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Watch">
+        <h3>Smart Watch</h3>
+        <div class="price">₹2999</div>
+        <button class="btn" onclick="buyNow()">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Dress">
+        <h3>Fashion Wear</h3>
+        <div class="price">₹1499</div>
+        <button class="btn" onclick="buyNow()">Buy Now</button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Login Section -->
+  <section id="login">
+
+    <div class="login-box">
+
+      <h2>Login</h2>
+
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email">
+          <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password">
+          <div class="error" id="passwordError"></div>
+        </div>
+
+        <button type="submit" class="btn" style="width:100%;">
+          Login
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- About Us -->
+  <section id="about">
+
+    <h2>About Us</h2>
+
+    <p>
+      Welcome to ShopEasy — your trusted online shopping partner.
+      We provide high-quality fashion products, electronics,
+      accessories, and much more at affordable prices.
+      Our mission is to make shopping simple, fast, and enjoyable
+      for everyone. We focus on customer satisfaction, secure
+      shopping, and quick delivery services.
+    </p>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 ShopEasy | All Rights Reserved
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+
+    // Shop Now Popup
+    function shopNow(){
+      alert("Welcome to ShopEasy! Start Shopping Now.");
+    }
+
+    // Buy Now Popup
+    function buyNow(){
+      alert("Product added successfully!");
+    }
+
+    // Login Validation
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", function(event){
+
+      event.preventDefault();
+
+      // Clear Errors
+      document.getElementById("emailError").innerHTML = "";
+      document.getElementById("passwordError").innerHTML = "";
+
+      let isValid = true;
+
+      // Email
+      const email = document.getElementById("email").value.trim();
+
+      const emailPattern =
+      /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      if(email === ""){
+        document.getElementById("emailError").innerHTML =
+        "Email is required";
+        isValid = false;
+      }
+      else if(!email.match(emailPattern)){
+        document.getElementById("emailError").innerHTML =
+        "Enter valid email";
+        isValid = false;
+      }
+
+      // Password
+      const password =
+      document.getElementById("password").value.trim();
+
+      if(password === ""){
+        document.getElementById("passwordError").innerHTML =
+        "Password is required";
+        isValid = false;
+      }
+      else if(password.length < 6){
+        document.getElementById("passwordError").innerHTML =
+        "Password must be at least 6 characters";
+        isValid = false;
+      }
+
+      // Success Popup
+      if(isValid){
+        alert("Login Successful!");
+        loginForm.reset();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
